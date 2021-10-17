@@ -5,13 +5,30 @@ import com.github.gimazdo.testcasecodmark.Model.User;
 
 import java.util.regex.Pattern;
 
+/**
+ * Класс проверки полей {@link User}
+ */
 public class UserUtil {
+    /**
+     * Паттерн пароля
+     */
     public static final Pattern passwordPattern = Pattern.compile("^(?=.*[A-Z])(?=.*\\d).+$");
+
+    /**
+     * Проверка пароля на соответствие паттерну
+     * @param password пароль, который проверяется
+     * @return true - соответствует, false - не соответствует
+     */
     public static boolean checkPassword(String password)
     {
         return passwordPattern.matcher(password).matches();
     }
 
+    /**
+     * Проверка всех полей {@link User}
+     * @param user пользователь которого нужно проверить
+     * @return Возвращает ошибки при проверке. Если массив пустой, значит все ОК
+     */
     public static UserServiceException validateUser(User user)
     {
         UserServiceException exception = new UserServiceException();

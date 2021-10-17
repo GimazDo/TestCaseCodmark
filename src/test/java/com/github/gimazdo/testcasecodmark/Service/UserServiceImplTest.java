@@ -570,7 +570,7 @@ class UserServiceImplTest {
 
     }
     /**
-     *
+     * Тест на ошибку при присвоении роли, потому что она уже есть у пользователя
      */
     @Test
     void addRoleToUserFailedUserHasRole()
